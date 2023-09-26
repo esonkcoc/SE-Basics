@@ -90,7 +90,11 @@ To **stage** a file issue the command `git add` in the correct ***working*** **d
 
 To see what is in a repo but *not* **committed** issue the command `git status`. **Uncommitted** changes will be listed under 'Changes not staged for commit:' These are **modified** files that are **staged** but haven't **committed**. **Untracked** files, that is those that have never been **staged** at all, will be listed under 'Untracked files:'
 
+## Commit
+
 Once **staged**, your file can be **committed** by issueing the command `git commit -m`. Following the command, a message within quotation marks about the **commit** can be appended. e.g., `git commit -m "Add GitNotes.md"`. '-m' represents the ability to leave a short message, without opening a text editor. Without '-m', a text editor will open, allowing you to write an extensive or multi-line **commit** message.
+
+## Push
 
 Once **committed**, your file can be **pushed** to another **remote** repo. First, set the target **remote** repo by issue the command `git remote add origin https://github.com/username/targetrepo.git`. e.g., `git remote add origin https://github.com/esonkcoc/SE-Basics.git`. Next, **push** your **local commits** to your **remote** repo by issuing the command `git push -u origin master`. '-u' represents the establishing of a connection between your **local branch** and an **upstream branch**, located in a **remote** repo. Your **local** repo's **master branch** has now been **pushed** to your **remote** repo. Occasionally, a **branch** will have an alternative name, such as 'main' or 'mainline', in which case 'master' will need to be replaced accordingly in the afformention command. Issue the command `git branch` to check the **branch** name. Now that a connection between **local and upstream branches** is established, the shorter command `git push` can be issued to **push** future **commits** to the same **remote** repo.
 
