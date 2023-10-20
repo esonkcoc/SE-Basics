@@ -48,7 +48,7 @@ Data is stored in **memory** *contigiously*: top to bottom, left to right. Each 
 
 As well as being containers for **indexed values**, **arrays** can also be **passed** as **arguments**. e.g., `float average(int array [])`. In this example 'array' is *not* a **keyword** and could have been any **variable** name, what *is* key however is `[]` syntax which signals the creation of an as yet empty container which will  be filled with a collection of **return values** from elsewhere in the programme.
 
-By definition, an **array** always contains an `int` data type because whether you are storing `char`s or `string`s they are all ultimately understood by the programme by their **ASCII value** which is an interger. Nevertheless, in practice we must always cast **arrays** as the appropriate data type.
+By definition, an **array** always contains an `int` data type because whether you are storing `char` or `string` they are all ultimately understood by the programme by their **ASCII value** which is an interger. Nevertheless, in practice we must always cast **arrays** as the appropriate data type.
 
 - **Characters**: Inverted commas denote the contained **value** is a `char` data type, while quotation marks denote the contained **value** is a `string` data type. At a *lower-level*, all recognisable characters, i.e., letters, numbers and symbols, are **variables** for a corresponding `int` **ASCII value** which, in turn, is a **variable** for a sequence of **bits** (0s and 1s), i.e., **binary**. It is this sequence of 8 **bits** that make up the **bytes** which the programme is fundementally dealing in.
 
