@@ -38,16 +38,24 @@ Data is stored in **memory** *contigiously*: top to bottom, left to right. Each 
 - `float`: 4 bytes
 - `double`: 8 bytes
 
+
 ![1 byte stored in memory](<1byte_in_memory.png>)
+
 *1 byte stored in memory*
 
+
 ![4 bytes stored in memory](<4bytes_in_memory.png>)
+
 *4 bytes stored in memory*
+
 
 - **Arrays**: A collection of **indexed values**, each individually accessible. Rather than having multiple **variables** for a collection of **values**, they can all be stored within a single **array** the size of your choosing and individually manipulated by knowing where within the **array** the specific **value** is located, i.e., **indexed**. **Arrays** are a way of storing data back-to-back in **memory** such that this data is easily accessible. e.g., `int score [3]` is a way of telling the **compiler** to provide three back-to-back places in **memory** of `int` size **bytes** to store three 'scores'.
 
+
 ![12 bytes stored in memory](<12bytes_in_memory.png>)
+
 *12 bytes stored in memory*
+
 
 As well as being containers for **indexed values**, **arrays** can also be **passed** as **arguments**. e.g., `float average(int array [])`. In this example 'array' is *not* a **keyword** and could have been any **variable** name, what *is* key however is `[]` syntax which signals the creation of an as yet empty container which will  be filled with a collection of **return values** from elsewhere in the programme.
 
@@ -63,11 +71,14 @@ Furthermore, you can now imagine how you might use a character's `int` **ASCII v
 
 - **String**s: **Arrays** of characters, or an **array** of **variables** of data type `char`. The individual **values** located throughtout a string can be accessed via their specfic **index**. In **memory**, strings are stored as '*n*+1' where *n* represents the total length of the string and 1 the '\0' character (0 = nul in **ASCII**), which acts as a *delimitor* between separate strings. The programme knows a string has ended when it encounters '\0'. A string, therefore, always takes up one more **byte** than the programmer entered.
 
+
 ![A string in memory](<string_in_memory.png>)
+
 *A string stored in memory*
 
 
 ![Characters in memory](<chars_in_memory.png>)
+
 *Characters in memory*
 
 
@@ -75,7 +86,9 @@ In **C**, the length of an **array** can *not* be discovered *dynamically* but a
 
 An **array** can contain two seperate strings that can have their individual character **values** accessed. e.g., `string array [2]` you have cast your **array**-contained data type as a `string`, named your **variable** 'array', signalled we are creating an **array** with `[]` and set the number of **arrays** to 2. `array [0][0], [0][1], [0][2]` evoke the **variable** 'array' and access the first `string` [0] and its first `char` [0], the first `string` [0] and its second `char` [1], the first `string` [0] and its third `char` [2].
 
+
 ![2 strings in memory](<2strings_in_memory.png>)
+
 *2 strings in memory*
 
 

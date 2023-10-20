@@ -21,7 +21,11 @@ Computers represent information in **binary**, i.e., 0s and 1s - 'off' and 'on'.
 
 Bytes can be used to represent pixles, images, sound frequencies etc. **ASCII** is the industry standard by which specific **binary** sequences correspond to recognisable letters, numbers, symbols, emoji etc.
 
+
 ![ASCII](<ascii.png>)
+
+*ASCII values*
+
 
 *RGB*, or red, green, blue, is simply a combination of three corresponding numbers that combine to create a fourth colour. Images are little more than a collection of these *RGB* numbers, and videos are a sequence of images stored together and show at a frame rate that makes the images, or frames, appear in motion.
 
