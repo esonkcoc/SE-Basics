@@ -10,7 +10,7 @@ Your **terminal** provides a **command line interface (CLI)** within which you c
 
 ## Design and Style
 
-_What constitutes 'good' programming? That which is fast, maintainable and elegantly communicates your solution. i.e., That which is correct, well-designed and well-styled._ If there is a lot of _'copy & paste' programming in your programme it is a sign of bad design_.
+*What constitutes 'good' programming? That which is fast, maintainable and elegantly communicates your solution. i.e., That which is correct, well-designed and well-styled. If there is a lot of 'copy & paste' programming in your programme it is a sign of bad design.*
 
 Be alert to oppertunities to **abstract** away the *low-level* complexity of your **algorithims** in favour of the elegance of a *high-level*, bespoke **function**. 
  
@@ -167,7 +167,7 @@ The data types that can be stored within a **variable**. **Python** does not req
 - `float`: A floating-point value, or real number with a decimal value.
 - `double`: A floating-point value with more digits than a `float`.
 
-Data types have specific limits, e.g., generally, _we use 32bit to represent an `int`,_ therefore the biggest number you have the **memory** to represent is 4294967296. Because you also need the capacity of your 32bit to represent negative numbers, you have to halve 4294967296 and allocate half to the negative side of the range of representation. Counting too high and running out of **bits** is when you encounter **interger overflow**. e.g., You only have 3bit but want to represent the **value** 8. Once you get to 7 (111) you **wrap around** back to 0 (000) or even to a negative number, instead of creating a fourth **bit** (1000 = `int` 8) from nothing. When working with **binary** you may need to prepend leading 0s to make sure the **binary** is of the desired length. i.e., 8bit represents 4 as 00000100.
+Data types have specific limits, e.g., generally, we use 32bit to represent an `int`, therefore the biggest number you have the **memory** to represent is 4294967296. Because you also need the capacity of your 32bit to represent negative numbers, you have to halve 4294967296 and allocate half to the negative side of the range of representation. Counting too high and running out of **bits** is when you encounter **interger overflow**. e.g., You only have 3bit but want to represent the **value** 8. Once you get to 7 (111) you **wrap around** back to 0 (000) or even to a negative number, instead of creating a fourth **bit** (1000 = `int` 8) from nothing. When working with **binary** you may need to prepend leading 0s to make sure the **binary** is of the desired length. i.e., 8bit represents 4 as 00000100.
 
 **C** has the `long` data type that has more (64) **bits** available to it and can, therefore, represent longer intergers. Likewise, **Floating-point imprecision** is the limited precision with which a number can be output due to **memory** contrains. A computer can only be so precise when constrained by its **bits**, so in this instance rather than **casting** your number as a `float` you should **cast** it as a `double` which, as the name suggests, has 64bit available to it. These are real world problems a programmer must contend with; even **Python** will be challenged by **floating-point imprecision**.
 

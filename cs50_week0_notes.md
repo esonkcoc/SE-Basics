@@ -17,7 +17,7 @@ When working with bases you are multiplying the *product* by the *power* of *n*.
 
 ## Representation
 
-Computers represent information in **binary**, i.e., 0s and 1s - 'off' and 'on'. A **transistor** is the mechanism by which computers know if something is 'off' or 'on', it is a 'switch'. One unit of **binary**, that is a single pair of 'off' and 'on', is called a **binary digit**, i.e., a **bit**. 8 **bits** is 1 **byte**; the _unit of measure for digital information storage._ 8 **bits** = 1 **byte** = 2^8 = 256 different 'off' and 'on' permutations, ranging from 00000000 - 11111111. Computers generally use a single **byte** to represent a number, e.g., 00000101 is 5 in **binary**. To increase the number of permutations, and thus the amount of information a computer can store and represent, you can increase the number of available **bytes** by increaseng the number of **transistors**, i.e., by using more hardware. 8bit> 16bit> 32bit> 64bit etc. Computers are ostensibly millions, perhaps billions, of **transistors** being turned 'off' and 'on'. By working in **binary**, and thus **bytes**, computers are able to represent far more information than if it were to work in **unary**, and is more elegant than **decimal**.
+Computers represent information in **binary**, i.e., 0s and 1s - 'off' and 'on'. A **transistor** is the mechanism by which computers know if something is 'off' or 'on', it is a 'switch'. One unit of **binary**, that is a single pair of 'off' and 'on', is called a **binary digit**, i.e., a **bit**. 8 **bits** is 1 **byte**; the unit of measure for digital information storage. 8 **bits** = 1 **byte** = 2^8 = 256 different 'off' and 'on' permutations, ranging from 00000000 - 11111111. Computers generally use a single **byte** to represent a number, e.g., 00000101 is 5 in **binary**. To increase the number of permutations, and thus the amount of information a computer can store and represent, you can increase the number of available **bytes** by increaseng the number of **transistors**, i.e., by using more hardware. 8bit> 16bit> 32bit> 64bit etc. Computers are ostensibly millions, perhaps billions, of **transistors** being turned 'off' and 'on'. By working in **binary**, and thus **bytes**, computers are able to represent far more information than if it were to work in **unary**, and is more elegant than **decimal**.
 
 Bytes can be used to represent pixles, images, sound frequencies etc. **ASCII** is the industry standard by which specific **binary** sequences correspond to recognisable letters, numbers, symbols, emoji etc.
 
@@ -31,7 +31,7 @@ An **abstraction** is a *low-level* concept that you understand just in the **ab
 
 An **algorithim** is a computer science **abstraction**. It is not strictly necessary to know *how* an **algorithim** has solved a problem, just that its use *can* solved a problem. Problem solving can be broken down fundementally to ***input> 'Black Box'> output*** where the **algorithim** is within the, so called, 'Black Box'.
 
-_**Abstraction** is an essential skill and concept within computer programming. Fundementally, it is the act of *simplifying* a problem in to smaller and smaller problems._
+***Abstraction*** *is an essential skill and concept within computer programming. Fundementally, it is the act of simplifying a problem in to smaller and smaller problems.*
 
 In the example below you have three **functions**. You have the `main` **function** that **calls** the **functions** `get_size` and `print_grid`. `main` is a bespoke function made by you and not a native feature of the language **C**. **Calling** the short line `get_size` **returns** the **value** `n` by executing more complex programming written elsewhere. **Calling** `print_grid` prints the grid to `n` specification by executing more complex programming written elsewhere.
 
@@ -72,21 +72,21 @@ Because you **abstracted** away the essential problems within the programme, the
         }
     }
 
-The lesson is to use what works if it is readily available and to not reinvent the wheel. _You should be well-aware of what solutions, like **libraries**, are at your disposal._
+The lesson is to use what works if it is readily available and to not reinvent the wheel. *You should be well-aware of what solutions, like ***libraries***, are at your disposal.*
 
 ## Basic Programming
 
 - **Pseudocode**: A pre-programming plan of well-defined programme behaviour for every possible scenario you might encounter when trying to engineer a solution.  **Pseudocoding** before you actually programme helps you to think through the logic of your problem in advance. 
 
-_Your ability to create **pseudocode** is essential to your success as a programmer._
+*Your ability to create ***pseudocode*** is essential to your success as a programmer.*
 
 - **Curly Braces**: In **C**, `{}` syntax is used to define blocks of programming. A block can contain one or more statements. The programming within **curely braces** is treated as a single unit and is executed together.
 
 These blocks define a *scope*, i.e., they create a context within which **variables**, **functions**, and **statements** are valid and accessible. A *scope* defines where in the programme certain elements are visible and useable. By defining different *scopes*, you can organise a clear separation between blocks of programming and prevent unintended interactions or **variable** name clashes between multiple blocks of a large programme.
 
-- **Indentations**: **Indent** your lines of programming _four_ spaces at a time to make clear which blocks of programme are **nested** inside others. **Programming construcst** in an **indented** line only execute if the **condition** in the line above is `True`.
+- **Indentations**: **Indent** your lines of programming four spaces at a time to make clear which blocks of programme are **nested** inside others. **Programming construcst** in an **indented** line only execute if the **condition** in the line above is `True`.
 
-If you use 'tab' to **indent**, be sure that your **text editor** is configured to convert it to _four_ spaces since 'tab' renders differently in different **editors**.
+If you use 'tab' to **indent**, be sure that your **text editor** is configured to convert it to four spaces since 'tab' renders differently in different **editors**.
 
     for (int i = 0; i < LIMIT; i++)
     {
@@ -101,7 +101,7 @@ If you use 'tab' to **indent**, be sure that your **text editor** is configured 
 
 - **Comments**: Are useful to those seeking to understand your programming decisions and how your programme works. They can also remind you of the same when revisiting old programmes. Heading any .c and .h files should be a **comment** that summarise what your programme or particular file does.
 
-_**Commenting** *each* interesting block of programme is *essential* and only requires a brief sentence or two._ Write **comments** that address one or both of these questions: _"What does this block do and why did I *implement* this block in this way?"_ Atop each of your **functions** except, perhaps, `main`, should be a **comment** that summarises what it does.
+***Commenting*** *each interesting block of programme is essential and only requires a brief sentence or two.* Write **comments** that address one or both of these questions: *"What does this block do and why did I implement this block in this way?"* Atop each of your **functions** except, perhaps, `main`, should be a **comment** that summarises what it does.
 
 **Comments** are an approximation of **pseudocode** in that **commenting** in as direct terms as possible, i.e., at a *high-level*, what you want to do is the first step in programming a solution. You are **abstracting** away *low-level* complexity for a more refined vision. 
 

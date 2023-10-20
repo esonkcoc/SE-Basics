@@ -39,20 +39,23 @@ Data is stored in **memory** *contigiously*: top to bottom, left to right. Each 
 - `double`: 8 bytes
 
 ![1 byte stored in memory](<1byte_in_memory.png>)
+*1 byte stored in memory*
 
 ![4 bytes stored in memory](<4bytes_in_memory.png>)
+*4 bytes stored in memory*
 
 - **Arrays**: A collection of **indexed values**, each individually accessible. Rather than having multiple **variables** for a collection of **values**, they can all be stored within a single **array** the size of your choosing and individually manipulated by knowing where within the **array** the specific **value** is located, i.e., **indexed**. **Arrays** are a way of storing data back-to-back in **memory** such that this data is easily accessible. e.g., `int score [3]` is a way of telling the **compiler** to provide three back-to-back places in **memory** of `int` size **bytes** to store three 'scores'.
 
 ![12 bytes stored in memory](<12bytes_in_memory.png>)
+*12 bytes stored in memory*
 
 As well as being containers for **indexed values**, **arrays** can also be **passed** as **arguments**. e.g., `float average(int array [])`. In this example 'array' is *not* a **keyword** and could have been any **variable** name, what *is* key however is `[]` syntax which signals the creation of an as yet empty container which will  be filled with a collection of **return values** from elsewhere in the programme.
 
-By definition, an **array** always contains an `int` data type because whether you are storing `char`s or `string`s they are all ultimately understood by the programme by their **ASCII value** which is an interger. Nevertheless, in practice we must always cast **arrays** as the appropriate data type.
+By definition, an **array** always contains an `int` data type because whether you are storing `char` or `string` they are all ultimately understood by the programme by their **ASCII value** which is an interger. Nevertheless, in practice we must always cast **arrays** as the appropriate data type.
 
 - **Characters**: Inverted commas denote the contained **value** is a `char` data type, while quotation marks denote the contained **value** is a `string` data type. At a *lower-level*, all recognisable characters, i.e., letters, numbers and symbols, are **variables** for a corresponding `int` **ASCII value** which, in turn, is a **variable** for a sequence of **bits** (0s and 1s), i.e., **binary**. It is this sequence of 8 **bits** that make up the **bytes** which the programme is fundementally dealing in.
 
-When programming, we _must_ think in these terms: _when accessing the **memory** location where a character is stored, it is ultimately the sequence of **bits** that corresponds to the character's specific **ASCII value** that is being retrieved, **operated** on and transformed, *not* the *higher-level* **abstraction** itself_, i.e., letters, numbers and symbols. Those **abstractions** are only the recognisable 'faces' of **binary**. Storing information in **memory** as a sequence of **bits** is not a 'choice' but fundemental computational architecture.
+When programming, we *must* think in these terms: *when accessing the **memory** location where a character is stored, it is ultimately the sequence of **bits** that corresponds to the character's specific **ASCII value** that is being retrieved, **operated** on and transformed, *not* the *higher-level* **abstraction** itself,* i.e., letters, numbers and symbols. Those **abstractions** are only the recognisable 'faces' of **binary**. Storing information in **memory** as a sequence of **bits** is not a 'choice' but fundemental computational architecture.
 
 Considering the above, when we perform an **operation** like `bits[i] = c % 2;` what we are doing is storing the modulus **return value** at location `i` of the 'bits' **array**. The **return value**, i.e., the remainder following the division of the character's corresponding `int` **ASCII value** by 2, is either 0 or 1. In effect, this operation is extracting the character's **binary** one **bit** at a time and storing them in reverse sequence in 'bits'. Given the `char` data type occupies 1 **byte** of **memory** and there are 8 **bits** in a **byte**, 'extraction' and storage will continue until all 8 **bits** of the character's **binary** are retrieved. The **bit** up for 'extraction' and its storage location, or **index**, in the **array** is whatever *iteration* the **loop** is on. When in correct sequence, this **array** of **bits** represents information we recognise as the original *high-level* character, i.e.,a letter, number or symbol.
 
@@ -61,14 +64,20 @@ Furthermore, you can now imagine how you might use a character's `int` **ASCII v
 - **String**s: **Arrays** of characters, or an **array** of **variables** of data type `char`. The individual **values** located throughtout a string can be accessed via their specfic **index**. In **memory**, strings are stored as '*n*+1' where *n* represents the total length of the string and 1 the '\0' character (0 = nul in **ASCII**), which acts as a *delimitor* between separate strings. The programme knows a string has ended when it encounters '\0'. A string, therefore, always takes up one more **byte** than the programmer entered.
 
 ![A string in memory](<string_in_memory.png>)
+*A string stored in memory*
+
 
 ![Characters in memory](<chars_in_memory.png>)
+*Characters in memory*
+
 
 In **C**, the length of an **array** can *not* be discovered *dynamically* but a string's can because of the '/0' character. Because string use is so common it has some 'priviledged' characteristics and a whole **library** (`string.h`) dedicated to its most useful **functions**. Likewise characters have their own **library** of most useful **functions** (`ctype.h`).
 
 An **array** can contain two seperate strings that can have their individual character **values** accessed. e.g., `string array [2]` you have cast your **array**-contained data type as a `string`, named your **variable** 'array', signalled we are creating an **array** with `[]` and set the number of **arrays** to 2. `array [0][0], [0][1], [0][2]` evoke the **variable** 'array' and access the first `string` [0] and its first `char` [0], the first `string` [0] and its second `char` [1], the first `string` [0] and its third `char` [2].
 
 ![2 strings in memory](<2strings_in_memory.png>)
+*2 strings in memory*
+
 
 - **Command Line Arguments**: Anything after a **CLI** command. e.g., `cd ...` or `clang ...`. **CLA's** let you express your intention all at once. So far, the two 'official' formats for defining a `main` **function** are `(void)`, i.e. no **CLA**, and `(int argc, string argv[])`, i.e, a **CLA**. Here, `argc` represents 'CLA count' and `argv` the length of the list of words, or **array** of strings, entered at the **prompt**. We need `argc` because **arrays** do not keep track of their length and thus must have a count initilised. Individual strings can keep track of their length but an **array** of strings can not.
 
