@@ -99,8 +99,54 @@ Once **staged**, your file can be **committed** by executing the command `git co
 
 Once **committed**, your file can be **pushed** to another, **remote** repo. First, set the target **remote** repo by executing the command `git remote add origin https://github.com/username/target_repo.git`. e.g., `git remote add origin https://github.com/esonkcoc/SE-Basics.git`. Next, **push** your **local commits** to your **remote** repo by issuing the command `git push -u origin master`. `-u` represents the establishing of a connection between your **local branch** and an **upstream branch**, located in a **remote** repo. Your **local** repo's **master branch** has now been **pushed** to your **remote** repo. Occasionally, a **branch** will have an alternative name, such as 'main' or 'mainline', in which case 'master' will need to be replaced accordingly in the afformention command. Execute the command `git branch` to check the **branch** name. Now that a connection between **local** and **upstream branches** is established, the shorter command `git push` can be executed to **push** future **commits** to the same **remote** repo.
 
+Your **local** repo has established a connection to your **remote** GitHub repo. This **remote** repo is *not* a clone of your **local**, only what is known as a **reference** to it. Git commands like `git fetch`, `git pull` or `git push` use the default **remote** repo name, i.e., **origin**, to specify their **remote** destinations.
+
 To see a log of all the changes made to a repo execute the command `git log`.
 
-## Merge Remote with Local Repo
+***
+
+The terms **origin** and **master** are related but serve different purposes in Git.
+
+- **origin**: A common default name for the **remote** repo *from which* you cloned your **local** repo. It acts as a *reference* to that **remote repo**. *It's a reference to the entire **remote repo**,* including all **branches** and **commits**. When you **fetch** or **pull** from **origin** you are bringing in changes and updates from the **remote repo**.
+
+In your context, **origin** is only being used as a default **remote** repo name in Git. If you initially created a project **locally** and then **pushed** it to your GitHub repo, the term **origin** serves as a reference to that **remote** repo. You have *not* cloned the GitHub repo **locally**; instead, you've configured your **local** to interact with the GitHub repo by designating **origin** as the **reference** to the GitHub repo. In your context, it is important to understand that **origin** is not a reference to a **remote** repo that has been cloned **locally** but only a **reference** to a **remote** repo to which you have **pushed** work.
+
+- **master**: Typically refers to the *default* **main branch** in a Git repo. *It is the mainline of development*.
+**master** can exist in both your **local** and remote **repo**, but they are separate. Your **local master branch** represents the main **branch** in your **local** copy of the repo, while the **remote master branch** represents the main **branch** in the **remote** repo.
+
+## Merge/Pull Remote with/to Local
 
 If project changes have been made to the **remote branch** which you'd like reflected in your **local branch** you must merge them. In **terminal**, check you are on the **local master branch** by issuing the command `git checkout master`. Fetch updates from your **remote branch** by issuing the command `git fetch origin`. 'origin' May need replacing should you have initially set the **remote** repo's name differently. This command will provide your **local** Git with information about changes made **remotely** without actually making those changes to the **local** ***working*** **directory**. Execute the command `git merge origin/master` to merge the **remote** changes in to the unchanged **local** branch. If you have **uncommitted** changes on your **local master branch**, you should **commit** before merging changes made **remotely** to avoid conflicts.
+
+**Problem**: You encounter a situation where your **local** repo is out of sync with your **remote** repo, and you wanted to make changes and synchronise them.
+
+**Solution**:
+1. Problem Identification: You initially attempted to **push** your **local** changes to the **remote repo** using `git push` but received a rejection error because the **remote** repo contained changes that you did not have **locally**.
+2. Fetching Remote Changes: To address this, you first used `git fetch origin` to **fetch** the latest changes from the **remote** repo, i.e., **origin**, without applying them to your ***working*** **directory**. This helped you *obtain* the **remote** changes and ensure you were aware of what was different.
+3. Pulling Remote Changes: You then ran `git pull origin master` to **fetch** and **merge** the **remote master branch** into your **local master branch**. This resolved the discrepancy by bringing your **local branch** up to date with the **remote branch**. If there were any conflicts during this process you would have resolved them as well.
+4. Successful Merge: The output indicated that a successful **merge** occurred which integrated the **remote** changes into your **local branch**. It showed which files were changed and highlighted that Git used a "recursive" strategy to merge those changes.
+5. Pushing Local Changes: After **merging** the **remote** changes you were able to **push** your **local changes** to the **remote** repo using `git push`. This update synchronised the **remote** repo with your **local** changes, and the **commit** history was aligned.
+6. Pull Request (Optional): If you were working in a collaborative environment or following a specific workflow, you may have created a **pull request** to propose and discuss the changes you made with others before merging them into the main branch.
+
+***
+
+The commands `git merge origin/master` and `git pull origin master` achieve similar goals but they have different approaches:
+
+- `git merge origin/master`: Specifically performs a **merge** operation. It takes the changes from the **origin/master branch** and integrates them into your *current* **branch**, in this case **master**. It *explicitly* performs a **merge** operation and leaves the possibility of conflicts that you need to resolve manually.
+
+- `git pull origin master`: This command combines two actions into one:
+1. It **fetches** the changes from the **origin/master branch** and updates your **local ***tracking*** branch** for **origin/master.** This step doesn't immediately change your ***working*** **directory**.
+2. It performs an *automatic* **merge** operation, attempting to integrate the changes into your *current* **branch**, in this case **master**.
+
+If conflicts arise during the *automatic* **merge**, Git will pause and ask you to resolve them before it completes the operation making it easier to address any issues that might arise during the update.. This makes it a bit more user-friendly in handling conflicts.
+
+In practice, whether you use `git merge` or `git pull` depends on your preference and your familiarity with Git. Both can be effective and some developers prefer one over the other based on their workflows and *how they like to handle conflicts*. Their difference is, frankly, negligable.
+
+***
+
+Though it not strictly necessary to **fetch** before you **merge**, but **fetching** before **merging** is a common practice for several reasons:
+
+1. **Inspecting Changes**: **Fetching** allows you to see what changes exist in the **remote** repo without automatically integrating them into your *current* **branch**. This can be useful to inspect the changes, compare **branches**, or decide if you want to **merge** them at all.
+2. **Updating Local References**: **Fetching** updates your **local** *remote-tracking* **branches**, e.g., **origin/master**, to reflect the state of the **remote** repo. This is essential for accurately understanding the differences between your **local** and **remote branches**.
+3. **Conflict Handling**: If there are changes both in your **local branch** and in the **remote branch**, **fetching** before **merging** gives you a chance to identify and resolve conflicts before they become a part of your **local branch**.
+4. **Control and Clarity**: Separating the **fetch** and **merge** steps provides more control over what you bring into your **local branch**. It also provides clarity in understanding what changes are incoming from the **remote**.
