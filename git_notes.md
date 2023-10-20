@@ -45,7 +45,7 @@ Once a file has been introduced to a Git repo, it exists as **untracked**; Git i
 
 A file's current state, saved in a project's history, is deemed **unmodified** and requires no further action. At this point, the file can be removed or edited. If removed from the repo, it returns to being **untracked** and will require **staging** and **committing** again. If edited, it is now deemed **modified**, meaning its current state differs from that of version **committed** to the projects's history. It too can then be **staged** and **committed**
 
-![The Git file life cycle](<Screenshot 2023-09-25 at 19.14.56.png>)
+![The Git file life cycle](<git_file_life_cycle.png>)
 
 ## Glossary
 
