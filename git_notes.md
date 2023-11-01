@@ -95,6 +95,19 @@ To see what is in a repo but *not* **committed** execute the command `git status
 
 Once **staged**, your file can be **committed** by executing the command `git commit -m`. Following the command, a message within quotation marks about the **commit** can be appended. e.g., `git commit -m "Add git_notes.md"`. `-m` represents the ability to leave a short message, without opening a text editor. Without `-m`, a text editor will open, allowing you to write an extensive or multi-line **commit** message.
 
+In Vim, you can save a commit message and proceed with your Git commit using the following steps:
+
+1. Write your commit message in Vim's editing mode.
+2. To save the commit message, press `Esc` to ensure you're in normal mode.
+3. Then, type `:w` and press `Enter`. This command writes (saves) the file.
+4. After saving the commit message, you can complete the commit by following the Git instructions in your terminal or by using Git commands.
+
+By using `:w`, you save the content of the file without exiting Vim. After saving, you can continue with the Git commit process.
+
+To exit Vim when you're done, you can use the `:q` command or `:q!` if you want to discard changes and forcefully quit. If you need to both save and quit, you can use `:wq`.
+
+Remember to press `Esc` before entering these Vim commands to ensure you're in normal mode, where commands like `:w` and `:q` are recognized.
+
 ## Push
 
 Once **committed**, your file can be **pushed** to another, **remote** repo. First, set the target **remote** repo by executing the command `git remote add origin https://github.com/username/target_repo.git`. e.g., `git remote add origin https://github.com/esonkcoc/SE-Basics.git`. Next, **push** your **local commits** to your **remote** repo by issuing the command `git push -u origin master`. `-u` represents the establishing of a connection between your **local branch** and an **upstream branch**, located in a **remote** repo. Your **local** repo's **master branch** has now been **pushed** to your **remote** repo. Occasionally, a **branch** will have an alternative name, such as 'main' or 'mainline', in which case 'master' will need to be replaced accordingly in the afformention command. Execute the command `git branch` to check the **branch** name. Now that a connection between **local** and **upstream branches** is established, the shorter command `git push` can be executed to **push** future **commits** to the same **remote** repo.
