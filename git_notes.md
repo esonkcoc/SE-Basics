@@ -93,20 +93,16 @@ To see what is in a repo but *not* **committed** execute the command `git status
 
 ## Commit
 
-Once **staged**, your file can be **committed** by executing the command `git commit -m`. Following the command, a message within quotation marks about the **commit** can be appended. e.g., `git commit -m "Add git_notes.md"`. `-m` represents the ability to leave a short message, without opening a text editor. Without `-m`, a text editor will open, allowing you to write an extensive or multi-line **commit** message.
+Once **staged**, your file can be **committed** by executing the command `git commit -m`. Following the command, a message within quotation marks about the **commit** can be appended. e.g., `git commit -m "Add git_notes.md"`. `-m` represents the ability to leave a short message, without opening a text editor. 
 
-In Vim, you can save a commit message and proceed with your Git commit using the following steps:
+Without `-m`, a Vim text editor will open, allowing you to write an extensive or multi-line **commit** message. In Vim, you can save a longer **commit** message and proceed with your Git **commit** using the following steps:
 
-1. Write your commit message in Vim's editing mode.
-2. To save the commit message, press `Esc` to ensure you're in normal mode.
-3. Then, type `:w` and press `Enter`. This command writes (saves) the file.
-4. After saving the commit message, you can complete the commit by following the Git instructions in your terminal or by using Git commands.
+1. Write your **commit** message in Vim's editing mode.
+2. To save the **commit** message, press 'Esc' to ensure you are in *normal mode*.
+3. Type `:w` and press 'Return'. This command writes the file. `:w` saves the content of the file without exiting Vim.
+4. After writing the **commit** message, you can complete the **commit** by following the Git instructions in your terminal or by using Git commands.
 
-By using `:w`, you save the content of the file without exiting Vim. After saving, you can continue with the Git commit process.
-
-To exit Vim when you're done, you can use the `:q` command or `:q!` if you want to discard changes and forcefully quit. If you need to both save and quit, you can use `:wq`.
-
-Remember to press `Esc` before entering these Vim commands to ensure you're in normal mode, where commands like `:w` and `:q` are recognized.
+To exit Vim use the `:q` command or `:q!` if you want to discard changes and force quit. If you need to both save and quit, you can use `:wq`. Remember to press 'Esc' before entering Vim commands to ensure you are in *normal mode* where they are recognised.
 
 ## Push
 
