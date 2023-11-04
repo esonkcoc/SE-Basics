@@ -46,6 +46,7 @@ Once a file has been introduced to a Git repo, it exists as **untracked**; Git i
 A file's current state, saved in a project's history, is deemed **unmodified** and requires no further action. At this point, the file can be removed or edited. If removed from the repo, it returns to being **untracked** and will require **staging** and **committing** again. If edited, it is now deemed **modified**, meaning its current state differs from that of version **committed** to the projects's history. It too can then be **staged** and **committed**
 
 ![The Git file life cycle](<git_file_life_cycle.png>)
+
 *The Git file life cycle*
 
 ## Glossary
@@ -137,7 +138,7 @@ If project changes have been made to the **remote branch** which you'd like refl
 5. Pushing Local Changes: After **merging** the **remote** changes you were able to **push** your **local changes** to the **remote** repo using `git push`. This update synchronised the **remote** repo with your **local** changes, and the **commit** history was aligned.
 6. Pull Request (Optional): If you were working in a collaborative environment or following a specific workflow, you may have created a **pull request** to propose and discuss the changes you made with others before merging them into the main branch.
 
-***
+## Merge and Pull differences
 
 The commands `git merge origin/master` and `git pull origin master` achieve similar goals but they have different approaches:
 
@@ -151,7 +152,7 @@ If conflicts arise during the *automatic* **merge**, Git will pause and ask you 
 
 In practice, whether you use `git merge` or `git pull` depends on your preference and your familiarity with Git. Both can be effective and some developers prefer one over the other based on their workflows and *how they like to handle conflicts*. Their difference is, frankly, negligable.
 
-***
+## Fetching
 
 Though it not strictly necessary to **fetch** before you **merge**, but **fetching** before **merging** is a common practice for several reasons:
 
@@ -159,3 +160,29 @@ Though it not strictly necessary to **fetch** before you **merge**, but **fetchi
 2. **Updating Local References**: **Fetching** updates your **local** *remote-tracking* **branches**, e.g., **origin/master**, to reflect the state of the **remote** repo. This is essential for accurately understanding the differences between your **local** and **remote branches**.
 3. **Conflict Handling**: If there are changes both in your **local branch** and in the **remote branch**, **fetching** before **merging** gives you a chance to identify and resolve conflicts before they become a part of your **local branch**.
 4. **Control and Clarity**: Separating the **fetch** and **merge** steps provides more control over what you bring into your **local branch**. It also provides clarity in understanding what changes are incoming from the **remote**.
+
+***
+
+## VSCode GitHub Extension
+
+Projects can be **pushed** directly to GitHub from within VSCode via its GitHub Pull Request extension, streamlining the entire process. Working via VSCode's 'Source Control Manager' (SCM) icon on the left panel, you can skip having to **initialise** a repo, set **endpoints**, **stage** and **commit** changes via your **CLI** and let VSCode handle all that complexity for you. You can also publish from **locally** to your GitHub without establishing a **remote** repo, as well as letting VSCode handle GitHub authentification and allow other extensions to use that authentification to provide additional functionality.
+
+As well as working via the SCM, you can use VSCode's command pallet and execute the command `>publish`.
+
+When creating a project, it is important to always include a `README.md` file for your repo to explain what the file is, does and how to use it. If the project you are publishing contains a `.gitignore` file you will not be prompted for items to push to GitHub. `.env.development` files are used to define programme information that is confidential. *Never* **push** confidential files to GitHub when prompted. Your **local** and **remote** repos will contain a new file, `.gitignore`, which the filename '.env.development' will be written to. Any filename written to the `gitignore` file will be ignored for GitHub publication. Publishing to GitHub does not require the **initialising** of a repo either **locally** or **remotely**; publishing and **initialising** a repo are two separate actions though not mutually exlusive.
+
+![Confidential data](<confidential_data.png>)
+
+*Confidential data*
+
+Likewise, **cloning** a **remote** repo to **locally** is a much streamlined process with VSCode's GitHub extension. **Cloning** can either be done via the 'Explorer' icon on the left panel or the command pallet by executing `Git: Clone`. There are a wide range of repos from GitHub to search for and **clone** for your own purposes all via VSCode. VSCode's 'Timeline' view at the bottom of the 'Explorer' panel allows you to get a sense of a project's chronological history. The 'diff editior' will open when you select a **commit** from 'Timeline' and allow you to compare it side-by-side with your current version of the project.
+
+![Timeline](<timeline.png>)
+
+*Timeline*
+
+When **committing** to GitHub via VSCode's extension, you will need to choose to **stage**, write a **commit** message, save the tab the message was written in as you would any other file, and **commit** all via the CSM icon. Once **committed**, close the message tab and choose to sync, again via the CSM icon.
+
+![Committing via GitHub extension](<committing_via_github_extension.png>)
+
+*Committing via GitHub extension*
