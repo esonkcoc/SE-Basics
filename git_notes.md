@@ -67,7 +67,8 @@ A Git repo can be **initialised** by issuing the command `git init`. This will *
     `cd /path/to/directory/for/inspection`
     `git rev-parse --is-inside-work-tree`
 
-Here, 'git' is the command, 'rev-parse' is the subcommand that parses and inspects aspects of Git, and ` --is-inside-work-tree` flags to check if you are inside a Git repo. If you are, output to **terminal** will be`True`, if not, there will be no output or an error. Alternatively, issuing the command `ls -a` will output a list of all files within the ***working*** **directory**, you can then look for the presence of a .git file. 
+Here, 'git' is the command, 'rev-parse' is the subcommand that parses and inspects aspects of Git, and ` --is-inside-work-tree` flags to check if you are inside a Git repo. If you are, output to **terminal** will be`True`, if not, there will be no output or an error. Alternatively, issuing the command `ls -a` will output a list of all files within the ***working*** **directory**, you can then look for the presence of a .git file. The command `rm -rf .git` will force remove the repo and all its contents.
+
 
 Config the name and e-mail address associates with your Git setup, and thus all comprising repos and objects, by executing the commands:
 
@@ -88,9 +89,11 @@ To **stage** a file execute the command `git add` in the correct ***working*** *
     `cd "/Users/abhi/hello/SE & DE Notes"`
     `git add GitNotes.md`
 
-`git add` **stages** *all* changes in the ***working*** **directory**.
+`git add .` **stages** *all* changes in the ***working*** **directory**.
 
 To see what is in a repo but *not* **committed** execute the command `git status`. **Uncommitted** changes will be listed under 'Changes not staged for commit:' These are **modified** files that are **staged** but haven't **committed**. **Untracked** files, that is those that have never been **staged** at all, will be listed under 'Untracked files:'
+
+The command `git ls-files` displays a list of all tracked files in the repo.
 
 ## Commit
 
@@ -111,9 +114,9 @@ Once **committed**, your file can be **pushed** to another, **remote** repo. Fir
 
 Your **local** repo has established a connection to your **remote** GitHub repo. This **remote** repo is *not* a clone of your **local**, only what is known as a **reference** to it. Git commands like `git fetch`, `git pull` or `git push` use the default **remote** repo name, i.e., **origin**, to specify their **remote** destinations.
 
-To see a log of all the changes made to a repo execute the command `git log`.
+To see a log of all the changes made to a repo execute the command `git log`. To see is you local repo is connected to a remote repo the command `git remote -v` will show you the URLs associated with it.
 
-***
+## Origin and Master
 
 The terms **origin** and **master** are related but serve different purposes in Git.
 
