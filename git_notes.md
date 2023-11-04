@@ -161,8 +161,6 @@ Though it not strictly necessary to **fetch** before you **merge**, but **fetchi
 3. **Conflict Handling**: If there are changes both in your **local branch** and in the **remote branch**, **fetching** before **merging** gives you a chance to identify and resolve conflicts before they become a part of your **local branch**.
 4. **Control and Clarity**: Separating the **fetch** and **merge** steps provides more control over what you bring into your **local branch**. It also provides clarity in understanding what changes are incoming from the **remote**.
 
-***
-
 ## VSCode GitHub Extension
 
 Projects can be **pushed** directly to GitHub from within VSCode via its GitHub Pull Request extension, streamlining the entire process. Working via VSCode's 'Source Control Manager' (SCM) icon on the left panel, you can skip having to **initialise** a repo, set **endpoints**, **stage** and **commit** changes via your **CLI** and let VSCode handle all that complexity for you. You can also publish from **locally** to your GitHub without establishing a **remote** repo, as well as letting VSCode handle GitHub authentification and allow other extensions to use that authentification to provide additional functionality.
