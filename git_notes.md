@@ -182,7 +182,7 @@ Likewise, **cloning** a **remote** repo to **locally** is a much streamlined pro
 
 *Timeline*
 
-When **committing** to GitHub via VSCode's extension, you will need to choose to **stage**, write a **commit** message, save the tab the message was written in as you would any other file, and **commit** all via the CSM icon. Once **committed**, close the message tab and choose to sync, again via the CSM icon.
+When **committing** to GitHub via VSCode's extension, you will need to choose to **stage**, write a **commit** message, save the tab the message was written in as you would any other file, and **commit** all via the CSM icon. Once **committed**, close the message tab and choose to sync, again via the CSM icon, which then **pushes local** changes to your **remote**.
 
 ![Committing via GitHub extension](<committing_via_github_extension.png>)
 
