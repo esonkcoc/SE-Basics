@@ -57,13 +57,22 @@ Data is stored in **memory** *contigiously*: top to bottom, left to right. Each 
 *12 bytes stored in memory*
 
 
-As well as being containers for **indexed values**, **arrays** can also be **passed** as **arguments**. e.g., `float average(int array [])`. In this example 'array' is *not* a **keyword** and could have been any **variable** name, what *is* key however is `[]` syntax which signals the creation of an as yet empty container which will  be filled with a collection of **return values** from elsewhere in the programme.
+As well as being containers for **indexed values**, **arrays** can also be **passed** as **arguments**. e.g., `float average(int array [])`. In this example 'array' is *not* a **keyword** and could have been any **variable** name, what *is* key however is `[]` syntax which signals the creation of an as yet empty container which will be filled with a collection of **return values** from elsewhere in the programme. One way of filling an array is to **statically define** it, where the `{}` syntax will signal to fill the array with the given values and to make it of the same length.
+
+    int numbers [] = {20, 50, 10, 5, 100, 1, 50}
+
+Manually filling an array would require defining the array length and labouriously assigning a value to each position in the array, one-by-one.
+
+    int numbers [7]
+    numbers[0] = 20
+    numbers[1] = 50
+    etc...
 
 By definition, an **array** always contains an `int` data type because whether you are storing `char` or `string` they are all ultimately understood by the programme by their **ASCII value** which is an interger. Nevertheless, in practice we must always cast **arrays** as the appropriate data type.
 
 - **Characters**: Inverted commas denote the contained **value** is a `char` data type, while quotation marks denote the contained **value** is a `string` data type. At a *lower-level*, all recognisable characters, i.e., letters, numbers and symbols, are **variables** for a corresponding `int` **ASCII value** which, in turn, is a **variable** for a sequence of **bits** (0s and 1s), i.e., **binary**. It is this sequence of 8 **bits** that make up the **bytes** which the programme is fundementally dealing in.
 
-When programming, we *must* think in these terms: *when accessing the **memory** location where a character is stored, it is ultimately the sequence of **bits** that corresponds to the character's specific **ASCII value** that is being retrieved, **operated** on and transformed, *not* the *higher-level* **abstraction** itself,* i.e., letters, numbers and symbols. Those **abstractions** are only the recognisable 'faces' of **binary**. Storing information in **memory** as a sequence of **bits** is not a 'choice' but fundemental computational architecture.
+When programming, we *must* think in these terms: *when accessing the **memory** location where a character is stored, it is ultimately the sequence of **bits** that corresponds to the character's specific **ASCII value** that is being retrieved, **operated** on and transformed, *not* the *higher-level* **abstraction** itself, i.e., letters, numbers and symbols. Those **abstractions** are only the recognisable 'faces' of **binary**. Storing information in **memory** as a sequence of **bits** is not a 'choice' but fundemental computational architecture.
 
 Considering the above, when we perform an **operation** like `bits[i] = c % 2;` what we are doing is storing the modulus **return value** at location `i` of the 'bits' **array**. The **return value**, i.e., the remainder following the division of the character's corresponding `int` **ASCII value** by 2, is either 0 or 1. In effect, this operation is extracting the character's **binary** one **bit** at a time and storing them in reverse sequence in 'bits'. Given the `char` data type occupies 1 **byte** of **memory** and there are 8 **bits** in a **byte**, 'extraction' and storage will continue until all 8 **bits** of the character's **binary** are retrieved. The **bit** up for 'extraction' and its storage location, or **index**, in the **array** is whatever *iteration* the **loop** is on. When in correct sequence, this **array** of **bits** represents information we recognise as the original *high-level* character, i.e.,a letter, number or symbol.
 
