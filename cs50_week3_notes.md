@@ -6,27 +6,27 @@ In terms of **memory**, think of the process of finding a specific number in an 
 
 - **Linear**: This searches every value individually and can be very tedious if the values are not sorted. Even if they were sorted, a **linear** search would take more time than other search **algorithms**. As show below, a **linear** search can really be thought of as just a **for loop** of the length of an **array**:
 
-                            #include <cs50.h>
-                            #include <stdio.h>
+    #include <cs50.h>
+    #include <stdio.h>
 
-                            int main(void)
-                            {
-                                // An array of integers
-                                int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+    int main(void)
+    {
+        // An array of integers
+        int numbers[] = {20, 500, 10, 5, 100, 1, 50};
 
-                                // Search for number
-                                int n = get_int("Number: ");
-                                for (int i = 0; i < 7; i++)
-                                {
-                                    if (numbers[i] == n)
-                                    {
-                                        printf("Found\n");
-                                        return 0;
-                                    }
-                                }
-                                printf("Not found\n");
-                                return 1;
-                            }
+        // Search for number
+        int n = get_int("Number: ");
+        for (int i = 0; i < 7; i++)
+        {
+            if (numbers[i] == n)
+            {
+                printf("Found\n");
+                return 0;
+            }
+        }
+        printf("Not found\n");
+        return 1;
+    }
 
 If you want to search for a string within an **array**, your programme would require modification as such:
 
@@ -69,9 +69,9 @@ One way we judge an **algorithm's** efficiency is with **Big *O*** notation, tha
 
 - *O*(*n*2) 
 - *O*(*n* log *n*)
-- *O*(*n*)    **Linear** search: Always *n* steps for the **algorithm** to perform.
-- *O*(log *n*)    **Binary** search*:
-- *O*(1)    One fixed step, no matter how large the value *n*.
+- *O*(*n*) **Linear** search: Always *n* steps for the **algorithm** to perform.
+- *O*(log *n*) **Binary** search: log*2 means to / the range of values again and again.
+- *O*(1) One fixed step, no matter how large the value *n*.
 
 Above is the generally accepted range of worst-case scenario **algorithm running time** speeds, as expressing in **Big *O*** notation. The **upper bound** is where the slowest **algorithms** are, the **lower bound** the fastest. Collectively, however, they all represent an **algorithm's** potential most **upper running time bound**, or worst-case efficiency, of an **algorithm**. Below is the same concept but representing an **algorithm's** potental **lowest running time bound**, known as **Omega**.
 
