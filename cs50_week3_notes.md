@@ -6,27 +6,27 @@ In terms of **memory**, think of the process of finding a specific number in an 
 
 - **Linear**: This searches every value individually and can be very tedious if the values are not sorted. Even if they were sorted, a **linear** search would take more time than other search **algorithms**. As show below, a **linear** search can really be thought of as just a **for loop** of the length of an **array**:
 
-    #include <cs50.h>
-    #include <stdio.h>
+        #include <cs50.h>
+        #include <stdio.h>
 
-    int main(void)
-    {
-        // An array of integers
-        int numbers[] = {20, 500, 10, 5, 100, 1, 50};
-
-        // Search for number
-        int n = get_int("Number: ");
-        for (int i = 0; i < 7; i++)
+        int main(void)
         {
-            if (numbers[i] == n)
+            // An array of integers
+            int numbers[] = {20, 500, 10, 5, 100, 1, 50};
+
+            // Search for number
+            int n = get_int("Number: ");
+            for (int i = 0; i < 7; i++)
             {
-                printf("Found\n");
-                return 0;
+                if (numbers[i] == n)
+                {
+                    printf("Found\n");
+                    return 0;
+                }
             }
+            printf("Not found\n");
+            return 1;
         }
-        printf("Not found\n");
-        return 1;
-    }
 
 If you want to search for a string within an **array**, your programme would require modification as such:
 
