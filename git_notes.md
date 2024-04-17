@@ -114,6 +114,10 @@ Without `-m`, a Vim text editor will open, allowing you to write an extensive or
 
 To exit Vim use the `:q` command, or `:q!` if you want to discard changes and force quit. If you need to both save and quit, you can use `:wq`. Remember to press 'Esc' before entering Vim commands to ensure you are in *normal mode* where they are recognised.
 
+When **committing**, everything that is **staged** will be **committed**. Therefore, only **stage** that which you want to commit when executing `git commit`. Alternatively, if you only want to **commit** specific **stagged** files, add their filenames after `git commit` as such e.g.,
+
+    git commit file1.txt file2.txt -m "Committing changes in file1.txt and file2.txt"
+   
 ## Push
 
 Once **committed**, your file can be **pushed** to a **remote** repo. First, set the target **remote** repo by executing the command `git remote add origin https://github.com/username/target_repo.git`. e.g., `git remote add origin https://github.com/esonkcoc/SE-Basics.git`. Next, **push** your **local commits** to your **remote** repo by issuing the command `git push -u origin master`. `-u` represents the establishing of a connection between your **local branch** and an **upstream branch**, located in a **remote** repo. Your **local** repo's **master branch** has now been **pushed** to your **remote** repo. Occasionally, a **branch** will have an alternative name, such as 'main' or 'mainline', in which case 'master' will need to be replaced accordingly in the afformention command. Execute the command `git branch` to check the **branch** name. Now that a connection between **local** and **upstream branches** is established, the shorter command `git push` can be executed to **push** future **commits** to the same **remote** repo.
